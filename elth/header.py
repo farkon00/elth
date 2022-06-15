@@ -15,10 +15,21 @@ class EIdent:
 
         return buf
 
+class EType:
+    NONE = 0x00
+    REL = 0x01
+    EXEC = 0x02
+    DYN = 0x03
+    CORE = 0x04
+    LOOS = 0xFE00
+    HIO = 0xFEFF
+    LOPROC = 0xFF00
+    HIPRO = 0xFFFF
+
 
 class Header:
     def __init__(self, 
-     e_ident=None, e_type: int = 2, 
+     e_ident=None, e_type: int = EType.EXEC, 
      e_machine: int = 3, e_version: int = 1,
      e_flags: int = 0):
         assert e_type < 65536, "e_type must fit in 16 bits"
