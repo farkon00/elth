@@ -41,6 +41,8 @@ class PType:
     HIPRO = 0x7FFFFFFF
 
 class ProgramHeader:
+    SIZEOF = 0x38
+
     def __init__(self,
      p_type=PType.LOAD, p_flags=0, 
      p_offset=0, p_vaddr=0, p_paddr=0,
@@ -72,6 +74,8 @@ class ProgramHeader:
         ]
 
 class Header:
+    SIZEOF = 0x40
+
     def __init__(self, 
      e_ident=None, e_type: int = EType.EXEC, 
      e_machine: int = 0x3e, e_version: int = 1,
@@ -103,7 +107,7 @@ class Header:
 
         buf.extend(self.e_flags.to_bytes(4, "little"))
 
-        buf.extend([64, 0, 0x38, 0, 0x01, 0, 0x40, 0]) # e_ehsize, e_phentsize, e_phnum, e_shentsize
+        buf.extend([64, 0, ProgramHeader.SIZEOF, 0, 0x01, 0, 0x40, 0]) # e_ehsize, e_phentsize, e_phnum, e_shentsize
         buf.extend([0] * 4) # e_shnum, e_shstrndx
 
         return buf
