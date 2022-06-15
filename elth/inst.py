@@ -24,3 +24,6 @@ def mov(reg: int | str, value: int):
         return [0x48, 0xc7, reg, *value.to_bytes(4, "little")]
     else:
         raise ValueError("Invalid register(only 64-bit one supported currently)")
+
+def syscall():
+    return [0x0f, 0x05]
