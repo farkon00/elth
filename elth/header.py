@@ -26,6 +26,20 @@ class EType:
     LOPROC = 0xFF00
     HIPRO = 0xFFFF
 
+class PType:
+    NULL = 0x00000000
+    LOAD = 0x00000001
+    DYNAMIC = 0x00000002
+    INTERP = 0x00000003
+    NOTE = 0x00000004
+    SHLIB = 0x00000005
+    PHDR = 0x00000006
+    TLS = 0x00000007
+    LOOS = 0x60000000
+    HIO = 0x6FFFFFFF
+    LOPROC = 0x70000000
+    HIPRO = 0x7FFFFFFF
+
 
 class Header:
     def __init__(self, 
