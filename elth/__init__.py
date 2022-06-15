@@ -1,3 +1,5 @@
 """
-Elth is python library, that makes generating elf binaries easy.
+Elth is python library, that makes generating elf64 executables easy.
 """
+
+from . import *

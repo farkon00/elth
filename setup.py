@@ -11,7 +11,7 @@ if __name__ == '__main__':
         version="0.1", 
         author="farkon00",
         author_email="sammer2016sammer@gmail.com",
-        description="Elth is python library, that makes generating elf binaries easy.",
+        description="Elth is python library, that makes generating elf64 executables easy.",
         long_description=long_description,
         long_description_content_type="text/markdown",
         url="https://github.com/farkon00/elth",

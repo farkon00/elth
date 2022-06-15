@@ -1,6 +1,6 @@
 # Elth
 
-__Elth__ is python library, that makes generating elf binaries easy.
+__Elth__ is python library, that makes generating elf64 executables easy.
 
 # Roadmap
   * [ ] Add the most basic generating capabilities.
