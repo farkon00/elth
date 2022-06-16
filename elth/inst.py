@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+
 class Reg:
     RAX = 0xc0
     RBX = 0xc3
@@ -17,11 +20,20 @@ class Reg:
     R15 = 0xcf
 
 
-def mov(reg: int | str, value: int):
+@dataclass
+class Name:
+    name: str
+    length: int
+
+def mov(reg: int | str, value: int | str):
     if isinstance(reg, str):
         reg = getattr(Reg, reg)
+    if isinstance(value, int):
+        value = value.to_bytes(4, "little")
+    else:
+        value = (Name(value, 4), 0, 0, 0)
     if 207 >= reg >= 192:
-        return [0x48, 0xc7, reg, *value.to_bytes(4, "little")]
+        return [0x48, 0xc7, reg, *value]
     else:
         raise ValueError("Invalid register(only 64-bit one supported currently)")
 
