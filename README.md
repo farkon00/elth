@@ -3,7 +3,7 @@
 __Elth__ is python library, that makes generating elf64 executables easy.
 
 # Roadmap
-  * [ ] Add the most basic generating capabilities.
+  * [x] Add the most basic generating capabilities.
   * [ ] Add basic instructions for generating.
   * [ ] Add more advanced capabilities for generation.
   * May be section
